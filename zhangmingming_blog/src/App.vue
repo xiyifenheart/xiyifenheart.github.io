@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    欢迎来到张明明的博客
+    欢迎来到张明明的博客{{count}}
+    <button @click="add">增加</button>
   </div>
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex'
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: ''
     }
-  }
+  },
+  methods: mapActions([
+    'add'
+  ]),
+  computed: mapGetters([
+    'count'
+  ])
 }
 </script>
 
